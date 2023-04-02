@@ -5,10 +5,15 @@
     --ltgrey: #DCDCDC;
     --grey: #646464;
     --black: #000000;
+    --backgroundcolor: #E5E5E5;
 }
 
 * {
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--backgroundcolor);
 }
 
 h1 {
@@ -26,17 +31,18 @@ h2 {
 h3 {
     font-family: 'Roboto Serif';
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 p {
     font-family: 'Roboto';
+    font-size: 18px;
 }
 
 .grid-container {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: auto;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
     'header header header header'
     'bannerText bannerText image image'
@@ -47,19 +53,27 @@ p {
 }
 
 .header {
-    background-color: aqua;
 grid-area: header;
 display: flex;
 justify-content: space-between;
+margin: 0 15px 40px 15px;
 }
+
 
 a {
     text-decoration: none;
     padding-right: 25px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black);
 }
 
+.lines {
+    display: none;
+}
 
-button {
+.start  {
     background-color: var(--black);
     color: var(--white);
     border-radius: 26px;
@@ -70,37 +84,34 @@ button {
 
 
 .bannerText {
-    background-color: blueviolet;
+   margin: 20px 10px;
     display: grid;
 grid-area: bannerText;
 }
 
 .cooking-image {
-    background-color: coral;
 grid-area: image;
 }
 .cooking-image img {
     border-radius: 40px;
-    padding-left: 350px;
+
 }
 
 .cards-container {
-    background-color: deeppink;
 grid-area: cards;
 display: grid;
-grid-template-areas: 
-"card1 card2 card3"
-"card4 card5 card6";
-row-gap: 25px;
+grid-template-columns: repeat(3, 1fr);
+row-gap: 55px;
 column-gap: 15px;
+padding: 100px 20px;
 }
 
 .card1 {
-grid-area: card1;
 width: 400px;
 height: 324px;
 border-radius: 40px;
 background-color: var(--gold);
+justify-self: center;
 }
 
 .card1 h2 {
@@ -109,44 +120,43 @@ background-color: var(--gold);
 
 .white-cards {
     background-color: var(--white);
-    width: 400px;
-    height: 324px;
-    border-radius: 40px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 40px;
+    border-radius: 40px;
+    justify-self: center;
     box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.05);
 }
 .white-cards button {
     border: 1px solid var(--ltgrey);
     background-color: var(--white);
     color: var(--black);
+    font-weight: 600;
+    margin-top: 35px;
+    padding: 10px 20px;
+    border-radius: 26px;
 }
 
-#card2 {
-grid-area: card2;
+.card-text {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
 }
 
-#card3 {
-    grid-area: card3;
+.white-cards img {
+    position: absolute;
+    padding-left: 310px;
 }
 
-#card4 {
-    grid-area: card4;
-}
-
-#card5 {
-    grid-area: card5;
-}
-
-#card6 {
-    grid-area: card6;
+.footer img {
+    height: 30px;
+    align-self: center;
 }
 
 .footer {
     background-color: var(--gold);
+    height: 50px;
     display: flex;
     justify-content: center;
 grid-area: footer;
