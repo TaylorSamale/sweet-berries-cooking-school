@@ -1,3 +1,11 @@
+/* Good job on hiding the regular navbar and showing the hamburger icon on smaller screen sizes.
+
+The hamburger menu is not functional. */
+
+
+/* Great work on making your project responsive using media queries properly!
+
+You don’t have a media query for mobile size devices. */
 @media screen and (max-width: 800px) {
    
 .grid-container {
